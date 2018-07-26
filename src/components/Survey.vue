@@ -106,7 +106,7 @@ export default {
       (this.q5 != '')) {
         console.log('Form is Valid.');
 // TODO: If all of the data is valid, then use the $router to move the user to the Secret page.
-        this.$router.push('Survey');
+        this.$router.push('Secret');
       } else {
         console.log('Form is NOT Valid.');
         this.showError = true;
