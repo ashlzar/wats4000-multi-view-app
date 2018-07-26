@@ -8,19 +8,19 @@
       <form v-on:submit.prevent="ValidateForm">
 
       <p><label for="username">
-        <input type="text" id="username" v-model="username" placeholder="Enter your username here."
+        <input type="text" id="username" v-model="username" placeholder="Enter your username here.">
         </label></p>
       
       <p><label for="email">
-        <input type="email" id="email" v-model="email" placeholder="You@Example.com"
-        </label></p>
+        <input type="email" id="email" v-model="email" placeholder="You@Example.com">
+        </label>></p>
       
       <p><label for="password">
-        <input type="password" id="password" v-model="password" placeholder="Enter your password here."
+        <input type="password" id="password" v-model="password" placeholder="Enter your password here.">
         </label></p>
       
       <p><label for="passwordVerify">
-        <input type="password" id="passwordVerify" v-model="passwordVerify" placeholder="Enter your password again."
+        <input type="password" id="passwordVerify" v-model="passwordVerify" placeholder="Enter your password again.">
         </label></p>
       
 
@@ -29,7 +29,7 @@
     </div>
     <div v-show="!ShowForm" class="success-message">
       <h1>Thank you for signing up!</h1>
-      <p>Please take our new member survey. Click here</p><!-- TODO: Link "Click here" to the survey page. -->
+      <p>Please take our new member survey. <router-link to="Survey">Click here</router-link></p>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     validateForm: function () {
-      if ((this.username != '')) &&
+      if ((this.username != '') &&
           (this.email != '') &&
           (this.password === this.passwordVerify)){
             console.log ('Form is Valid');
@@ -58,7 +58,7 @@ export default {
             console.log('Form is NOT valid.');
             this.showError= true;
           }
-    console.log('validating form..')
+    console.log('validating form..');
     }
   }
 }
