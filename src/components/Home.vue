@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <div v-show="ShowForm" class="form-container">
+    <div v-show="showForm" class="form-container">
       <h1>Join the Web Developers Club!</h1>
       <p>Sign up to access our special, secret page. Just create an account and answer a brief survey.</p>
 
-      <p v-show="ShowError">There are errors in the form data you have submitted. Please doublecheck your information. All fields are required</p>
-      <form v-on:submit.prevent="ValidateForm">
+      <p v-show="showError">There are errors in the form data you have submitted. Please doublecheck your information. All fields are required</p>
+      <form v-on:submit.prevent="validateForm">
 
       <p><label for="username">
         <input type="text" id="username" v-model="username" placeholder="Enter your username here.">
@@ -27,7 +27,7 @@
         <p><input type="submit" value="Submit"></p>
       </form>
     </div>
-    <div v-show="!ShowForm" class="success-message">
+    <div v-show="!showForm" class="success-message">
       <h1>Thank you for signing up!</h1>
       <p>Please take our new member survey. <router-link to="Survey">Click here</router-link></p>
     </div>
